@@ -114,6 +114,7 @@ export const experiences = [
 
 export const projects = [
   {
+    slug: "synapse-ai-contract-risk-analyzer",
     title: "Synapse AI",
     subtitle: "Intelligent Contract Risk Analyzer",
     description:
@@ -140,6 +141,7 @@ export const projects = [
     },
   },
   {
+    slug: "enterprise-knowledge-assistant-rag",
     title: "Enterprise Knowledge Assistant",
     subtitle: "Source-grounded RAG Platform",
     description:
@@ -166,6 +168,7 @@ export const projects = [
     },
   },
   {
+    slug: "insta-bank-guarantee-automation",
     title: "Insta Bank Guarantee Automation",
     subtitle: "ICICI Bank",
     description:
@@ -192,6 +195,7 @@ export const projects = [
     },
   },
   {
+    slug: "suresanction-loan-automation",
     title: "SureSanction",
     subtitle: "Loan Sanction Automation - Axis Bank",
     description:
@@ -218,6 +222,7 @@ export const projects = [
     },
   },
   {
+    slug: "hdfc-analytics-automation",
     title: "HDFC Analytics & Automation",
     subtitle: "Internal Business Platforms",
     description:
@@ -244,6 +249,10 @@ export const projects = [
     },
   },
 ];
+
+export function getProject(slug: string) {
+  return projects.find((project) => project.slug === slug);
+}
 
 export const achievements = [
   {

@@ -4,9 +4,9 @@ import "./globals.css";
 
 const siteUrl = getSiteUrl();
 const title =
-  "Jawad Shaikh | Senior Software Developer & AI Engineer in Abu Dhabi";
+  "Jawad Shaikh | Senior Software Developer | Python, React, GenAI & FinTech";
 const description =
-  "Senior Software Developer in Abu Dhabi, UAE specializing in Python, Django, React, Next.js, GenAI, LLMs, RAG, document intelligence, Banking, and FinTech solutions.";
+  "Jawad Shaikh is a Senior Software Developer based in Abu Dhabi, UAE, specializing in Python, Django, React.js, REST APIs, GenAI, LLMs, RAG, Banking, FinTech, OCR, NLP, and enterprise automation.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

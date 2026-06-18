@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import {
   AnimatePresence,
   motion,
@@ -31,6 +32,7 @@ import {
   projects,
   skillGroups,
 } from "@/data/portfolio";
+import { rolePages } from "@/data/seo-pages";
 import { SectionHeading } from "@/components/section-heading";
 
 const emailComposeUrl =
@@ -208,7 +210,7 @@ function Hero() {
             <div className="mobile-portrait">
               <Image
                 src="/images/jawad-shaikh.jpeg"
-                alt=""
+                alt="Jawad Shaikh, Senior Software Developer in Abu Dhabi, UAE"
                 fill
                 priority
                 sizes="88px"
@@ -234,14 +236,15 @@ function Hero() {
           </motion.div>
 
           <motion.p className="hero-kicker" variants={reveal}>
-            Jawad Shaikh · Senior Software Developer
+            Abu Dhabi, UAE · Enterprise Software · Applied AI
           </motion.p>
           <motion.h1 variants={reveal}>
-            I engineer software for{" "}
-            <span className="gradient-text">
-              finance, intelligence &amp; scale.
-            </span>
+            Jawad Shaikh
+            <span className="gradient-text"> - Senior Software Developer</span>
           </motion.h1>
+          <motion.p className="hero-statement" variants={reveal}>
+            Engineering software for finance, intelligence, and scale.
+          </motion.p>
           <motion.div className="hero-specialties" variants={reveal}>
             <span>Python · Django</span>
             <span>React · Next.js</span>
@@ -367,7 +370,7 @@ function About() {
           <motion.div variants={reveal}>
             <SectionHeading
               eyebrow="About me"
-              title="Engineering useful intelligence into real products."
+              title="About Jawad Shaikh"
             />
           </motion.div>
           <motion.div className="about-copy" variants={reveal}>
@@ -439,7 +442,7 @@ function Skills() {
           <motion.div variants={reveal}>
             <SectionHeading
               eyebrow="Technical toolkit"
-              title="Built across the stack."
+              title="Software Development Skills"
               description="A practical technology set shaped by enterprise delivery, intelligent automation, and modern product engineering."
             />
           </motion.div>
@@ -486,7 +489,7 @@ function Experience() {
           <motion.div variants={reveal}>
             <SectionHeading
               eyebrow="Career journey"
-              title="Experience that connects code to outcomes."
+              title="Software Engineering Experience"
               description="Progressing from product development to leading enterprise automation and AI-enabled banking solutions."
             />
           </motion.div>
@@ -555,7 +558,7 @@ function Projects() {
           <motion.div className="section-title-row" variants={reveal}>
             <SectionHeading
               eyebrow="Selected work"
-              title="Systems built for complex, high-stakes workflows."
+              title="Selected Software Projects"
               description="Representative enterprise and prototype work. Client details are intentionally limited to public, non-confidential context."
             />
             <div className="project-note">
@@ -594,18 +597,50 @@ function Projects() {
                       <span key={tag}>{tag}</span>
                     ))}
                   </div>
-                  <button
-                    className="project-detail-button"
-                    type="button"
-                    onClick={() => setActiveProject(project)}
-                    aria-label={`View ${project.title} case study`}
-                  >
-                    Explore case study
-                    <ArrowRight size={15} aria-hidden="true" />
-                  </button>
+                  <div className="project-card-actions">
+                    <Link href={`/projects/${project.slug}`}>
+                      Full case study
+                      <ArrowRight size={15} aria-hidden="true" />
+                    </Link>
+                    <button
+                      className="project-detail-button"
+                      type="button"
+                      onClick={() => setActiveProject(project)}
+                      aria-label={`Quick view ${project.title} case study`}
+                    >
+                      Quick view
+                    </button>
+                  </div>
                 </motion.article>
               );
             })}
+          </motion.div>
+
+          <motion.div className="specialization-grid" variants={stagger}>
+            <motion.article className="specialization-card" variants={reveal}>
+              <p>Applied artificial intelligence</p>
+              <h2>AI &amp; LLM Solutions</h2>
+              <span>
+                Enterprise RAG, semantic search, Generative AI,
+                source-grounded assistants, OCR, NLP, and document intelligence
+                engineered with Python and Django.
+              </span>
+              <Link href="/genai-llm-developer">
+                Explore GenAI experience <ArrowRight size={15} />
+              </Link>
+            </motion.article>
+            <motion.article className="specialization-card" variants={reveal}>
+              <p>Financial technology</p>
+              <h2>Banking &amp; FinTech Work</h2>
+              <span>
+                Loan automation, bank guarantee processing, document
+                validation, analytics, risk workflows, and enterprise API
+                integrations for financial services.
+              </span>
+              <Link href="/banking-fintech-developer">
+                Explore FinTech experience <ArrowRight size={15} />
+              </Link>
+            </motion.article>
           </motion.div>
         </AnimatedSection>
       </div>
@@ -732,8 +767,9 @@ function Contact() {
               <span />
               Let&apos;s connect
             </p>
-            <h2>Looking for a senior developer who can bridge software and AI?</h2>
+            <h2>Contact Jawad Shaikh</h2>
             <p>
+              Looking for a senior developer who can bridge software and AI?
               I&apos;m based in Abu Dhabi and open to conversations about senior
               software engineering, full-stack, AI/LLM, and FinTech
               opportunities across the UAE.
@@ -823,6 +859,50 @@ function Contact() {
   );
 }
 
+function SearchProfileSummary() {
+  return (
+    <section className="section profile-summary-section">
+      <div className="container">
+        <AnimatedSection className="profile-summary-panel">
+          <motion.div className="profile-summary-copy" variants={reveal}>
+            <p className="eyebrow">
+              <span />
+              Search-friendly profile summary
+            </p>
+            <h2>Senior Software Developer in Abu Dhabi, UAE</h2>
+            <p className="profile-summary-lead">
+              Jawad Shaikh is a Senior Software Developer based in Abu Dhabi,
+              UAE, with 4+ years of experience building enterprise web
+              applications, REST APIs, Banking/FinTech automation platforms,
+              and AI-powered solutions using Python, Django, React.js, GenAI,
+              LLMs, RAG, OCR, and NLP.
+            </p>
+            <p>
+              His experience covers Full Stack Development, Python and Django
+              engineering, React and Next.js interfaces, enterprise Software
+              Engineering, document intelligence, and applied AI/LLM delivery.
+              He is available for senior technology opportunities across Abu
+              Dhabi and the wider UAE.
+            </p>
+          </motion.div>
+
+          <motion.div className="profile-role-links" variants={stagger}>
+            {rolePages.map((page) => (
+              <motion.div key={page.slug} variants={reveal}>
+                <Link href={`/${page.slug}`}>
+                  <span>{page.eyebrow}</span>
+                  <strong>{page.title}</strong>
+                  <ArrowRight size={16} />
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+}
+
 function Footer() {
   return (
     <footer className="footer">
@@ -865,6 +945,7 @@ export function Portfolio() {
         <Experience />
         <Projects />
         <Achievements />
+        <SearchProfileSummary />
         <Contact />
       </main>
       <Footer />
