@@ -1070,13 +1070,182 @@ button:focus-visible {
 .project-tags {
   display: flex;
   gap: 7px;
-  margin-top: auto;
   flex-wrap: wrap;
 }
 
 .project-tags span {
   padding: 6px 8px;
   font-size: 0.64rem;
+}
+
+.project-detail-button {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 7px;
+  margin-top: auto;
+  padding: 16px 0 0;
+  border: 0;
+  background: transparent;
+  color: var(--project-color);
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 720;
+  letter-spacing: 0.015em;
+}
+
+.project-detail-button svg {
+  transition: transform 0.2s ease;
+}
+
+.project-detail-button:hover svg {
+  transform: translateX(4px);
+}
+
+.case-study-overlay {
+  position: fixed;
+  z-index: 200;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  background: rgba(3, 5, 9, 0.82);
+  backdrop-filter: blur(18px);
+}
+
+.case-study-panel {
+  --project-color: #a99dff;
+  position: relative;
+  width: min(100%, 900px);
+  max-height: min(86vh, 760px);
+  padding: clamp(25px, 4vw, 44px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 27px;
+  background:
+    radial-gradient(
+      circle at 90% 5%,
+      color-mix(in srgb, var(--project-color) 17%, transparent),
+      transparent 30%
+    ),
+    #0c1019;
+  box-shadow: 0 42px 120px rgba(0, 0, 0, 0.55);
+  overflow-y: auto;
+  scrollbar-color: rgba(155, 140, 255, 0.45) transparent;
+  scrollbar-width: thin;
+}
+
+.case-study-panel::-webkit-scrollbar {
+  width: 7px;
+}
+
+.case-study-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.case-study-panel::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(155, 140, 255, 0.38);
+}
+
+.case-study-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.case-study-header p,
+.case-study-grid small {
+  margin: 0;
+  color: var(--project-color);
+  font-size: 0.64rem;
+  font-weight: 760;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.case-study-header h3 {
+  margin: 9px 0 3px;
+  font-size: clamp(1.65rem, 4vw, 2.75rem);
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+}
+
+.case-study-header span {
+  color: #939eac;
+  font-size: 0.85rem;
+}
+
+.case-study-header button {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #dfe5ed;
+  cursor: pointer;
+}
+
+.case-study-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 38px;
+  padding: 31px 0;
+}
+
+.case-study-grid section > p {
+  margin: 10px 0 0;
+  color: #a3adba;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.case-study-capabilities ul {
+  display: grid;
+  gap: 9px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.case-study-capabilities li {
+  display: grid;
+  grid-template-columns: 17px 1fr;
+  gap: 8px;
+  color: #b1bac7;
+  font-size: 0.8rem;
+}
+
+.case-study-capabilities li svg {
+  margin-top: 3px;
+  color: var(--project-color);
+}
+
+.case-study-outcome {
+  padding: 22px 24px;
+  border: 1px solid
+    color-mix(in srgb, var(--project-color) 17%, rgba(255, 255, 255, 0.06));
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--project-color) 5%, transparent);
+}
+
+.case-study-outcome span {
+  color: var(--project-color);
+  font-size: 0.62rem;
+  font-weight: 760;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.case-study-outcome p {
+  margin: 8px 0 0;
+  color: #c0c8d3;
+  font-size: 0.88rem;
 }
 
 /* Achievements */
@@ -1837,8 +2006,42 @@ a.contact-detail:hover {
   .project-card,
   .project-featured,
   .project-card:last-child {
-    min-height: 370px;
+    min-height: 400px;
     grid-column: auto;
+  }
+
+  .case-study-overlay {
+    align-items: end;
+    padding: 0;
+  }
+
+  .case-study-panel {
+    width: 100%;
+    max-height: 91svh;
+    padding: 25px 20px 24px;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 24px 24px 0 0;
+  }
+
+  .case-study-header {
+    gap: 16px;
+    padding-bottom: 22px;
+  }
+
+  .case-study-header h3 {
+    font-size: 1.65rem;
+  }
+
+  .case-study-grid {
+    grid-template-columns: 1fr;
+    gap: 23px;
+    padding: 25px 0;
+  }
+
+  .case-study-outcome {
+    padding: 18px;
   }
 
   .achievement-grid {

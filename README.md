@@ -35,4 +35,4 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.com
 ```
 
 The project is ready for deployment on Vercel. The resume is served from
-`public/resume.pdf`.
+`public/Jawad Shaikh.pdf`.

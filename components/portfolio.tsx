@@ -33,6 +33,9 @@ import {
 } from "@/data/portfolio";
 import { SectionHeading } from "@/components/section-heading";
 
+const emailComposeUrl =
+  "https://mail.google.com/mail/?view=cm&fs=1&to=shaikhjawwad8%40gmail.com&su=Opportunity%20for%20Jawad%20Shaikh";
+
 const reveal = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0 },
@@ -126,7 +129,7 @@ function Navbar() {
           ))}
         </nav>
 
-        <a className="nav-cta desktop-only" href="mailto:shaikhjawwad8@gmail.com">
+        <a className="nav-cta desktop-only" href="#contact">
           Let&apos;s talk
           <ArrowRight size={15} aria-hidden="true" />
         </a>
@@ -165,7 +168,7 @@ function Navbar() {
               ))}
               <a
                 className="mobile-contact"
-                href="mailto:shaikhjawwad8@gmail.com"
+                href="#contact"
                 onClick={() => setOpen(false)}
               >
                 Contact Jawad
@@ -253,8 +256,8 @@ function Hero() {
           <motion.div className="hero-actions" variants={reveal}>
             <a
               className="button button-primary resume-button"
-              href="/resume.pdf"
-              download
+              href="/Jawad%20Shaikh.pdf"
+              download="Jawad Shaikh.pdf"
             >
               <Download size={18} aria-hidden="true" />
               Download Resume
@@ -525,6 +528,26 @@ function Experience() {
 }
 
 function Projects() {
+  const [activeProject, setActiveProject] = useState<
+    (typeof projects)[number] | null
+  >(null);
+
+  useEffect(() => {
+    if (!activeProject) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setActiveProject(null);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [activeProject]);
+
   return (
     <section id="projects" className="section projects-section">
       <div className="container">
@@ -571,12 +594,93 @@ function Projects() {
                       <span key={tag}>{tag}</span>
                     ))}
                   </div>
+                  <button
+                    className="project-detail-button"
+                    type="button"
+                    onClick={() => setActiveProject(project)}
+                    aria-label={`View ${project.title} case study`}
+                  >
+                    Explore case study
+                    <ArrowRight size={15} aria-hidden="true" />
+                  </button>
                 </motion.article>
               );
             })}
           </motion.div>
         </AnimatedSection>
       </div>
+
+      <AnimatePresence>
+        {activeProject ? (
+          <motion.div
+            className="case-study-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onMouseDown={(event) => {
+              if (event.target === event.currentTarget) setActiveProject(null);
+            }}
+          >
+            <motion.article
+              className={`case-study-panel project-${activeProject.accent}`}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="case-study-title"
+              initial={{ opacity: 0, y: 35, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 25, scale: 0.98 }}
+              transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <div className="case-study-header">
+                <div>
+                  <p>{activeProject.category}</p>
+                  <h3 id="case-study-title">{activeProject.title}</h3>
+                  <span>{activeProject.subtitle}</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setActiveProject(null)}
+                  aria-label="Close project case study"
+                >
+                  <X size={20} />
+                </button>
+              </div>
+
+              <div className="case-study-grid">
+                <section>
+                  <small>Context</small>
+                  <p>{activeProject.caseStudy.context}</p>
+                </section>
+                <section>
+                  <small>Solution</small>
+                  <p>{activeProject.caseStudy.solution}</p>
+                </section>
+                <section className="case-study-capabilities">
+                  <small>Key capabilities</small>
+                  <ul>
+                    {activeProject.caseStudy.capabilities.map((capability) => (
+                      <li key={capability}>
+                        <CheckCircle2 size={15} />
+                        {capability}
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+                <section>
+                  <small>My contribution</small>
+                  <p>{activeProject.caseStudy.contribution}</p>
+                </section>
+              </div>
+
+              <div className="case-study-outcome">
+                <span>Outcome</span>
+                <p>{activeProject.caseStudy.outcome}</p>
+              </div>
+            </motion.article>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </section>
   );
 }
@@ -637,7 +741,9 @@ function Contact() {
             <div className="contact-actions">
               <a
                 className="button button-primary"
-                href="mailto:shaikhjawwad8@gmail.com"
+                href={emailComposeUrl}
+                target="_blank"
+                rel="noreferrer"
               >
                 <Mail size={18} />
                 Email Jawad
@@ -656,7 +762,9 @@ function Contact() {
 
           <motion.div className="contact-details" variants={stagger}>
             <motion.a
-              href="mailto:shaikhjawwad8@gmail.com"
+              href={emailComposeUrl}
+              target="_blank"
+              rel="noreferrer"
               className="contact-detail"
               variants={reveal}
             >
@@ -732,7 +840,12 @@ function Footer() {
           >
             <LinkedInIcon size={18} />
           </a>
-          <a href="mailto:shaikhjawwad8@gmail.com" aria-label="Send email">
+          <a
+            href={emailComposeUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Send email"
+          >
             <Mail size={18} />
           </a>
         </div>

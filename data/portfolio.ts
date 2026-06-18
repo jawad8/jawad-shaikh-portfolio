@@ -122,6 +122,22 @@ export const projects = [
     tags: ["Django", "React", "LLMs", "RAG", "NLP", "Ollama"],
     accent: "violet",
     category: "GenAI / Legal Tech",
+    caseStudy: {
+      context:
+        "Legal and commercial teams need to review large contracts quickly without losing traceability or relying on ungrounded AI answers.",
+      solution:
+        "Designed a contract intelligence workflow that ingests business documents, identifies clauses, retrieves semantically relevant context, and produces risk-oriented analysis grounded in the source material.",
+      capabilities: [
+        "PDF, DOCX, and TXT document ingestion",
+        "Clause extraction and semantic search",
+        "Risk classification and compliance validation",
+        "Source-grounded LLM responses with local model support",
+      ],
+      contribution:
+        "Full-stack architecture, Django REST APIs, React workflows, retrieval pipeline design, prompt orchestration, and secure JWT-based access.",
+      outcome:
+        "A reusable demonstration platform for faster, more consistent first-pass contract review while keeping the reviewer in control.",
+    },
   },
   {
     title: "Enterprise Knowledge Assistant",
@@ -132,6 +148,22 @@ export const projects = [
     tags: ["Python", "React", "RAG", "Vector DB", "REST APIs"],
     accent: "cyan",
     category: "GenAI / Knowledge",
+    caseStudy: {
+      context:
+        "Enterprise information is frequently fragmented across policies, manuals, and internal documents, making reliable answers slow to find.",
+      solution:
+        "Built a retrieval-augmented assistant that converts documents into searchable knowledge, retrieves the most relevant passages, and generates answers with clear source grounding.",
+      capabilities: [
+        "Configurable document ingestion and chunking",
+        "Vector embeddings and semantic retrieval",
+        "Context-aware question answering",
+        "Source citations and grounded response generation",
+      ],
+      contribution:
+        "Backend services, REST APIs, vector search workflow, retrieval quality controls, prompt design, and the React conversational experience.",
+      outcome:
+        "A scalable foundation for secure enterprise Q&A that improves information discovery without presenting generated content as an unsupported fact.",
+    },
   },
   {
     title: "Insta Bank Guarantee Automation",
@@ -142,6 +174,22 @@ export const projects = [
     tags: ["Python", "Django", "OCR", "NLP", "Oracle"],
     accent: "blue",
     category: "Banking / Automation",
+    caseStudy: {
+      context:
+        "Bank guarantee processing involves document-heavy validation, repeated data entry, and strict consistency and compliance checks.",
+      solution:
+        "Developed an automation workflow that extracts structured information from banking documents, applies business validations, and supports guarantee preparation through controlled stages.",
+      capabilities: [
+        "OCR and NLP-based data extraction",
+        "Multi-occurrence validation and deduplication",
+        "Document and business-rule consistency checks",
+        "REST API integration with enterprise systems",
+      ],
+      contribution:
+        "Extraction architecture, validation logic, Django services, Oracle-backed workflows, API integrations, and production-focused exception handling.",
+      outcome:
+        "Improved extraction reliability and reduced repetitive manual verification while preserving review checkpoints for banking operations.",
+    },
   },
   {
     title: "SureSanction",
@@ -152,6 +200,22 @@ export const projects = [
     tags: ["Django", "JavaScript", "REST APIs", "ML", "Java"],
     accent: "emerald",
     category: "FinTech / Workflow",
+    caseStudy: {
+      context:
+        "Loan sanction workflows require teams to scrutinize multiple documents, identify discrepancies, and coordinate approvals under tight turnaround expectations.",
+      solution:
+        "Engineered a workflow platform for document scrutiny, discrepancy detection, controlled approvals, and banking document comparison.",
+      capabilities: [
+        "Configurable loan approval workflow",
+        "In-house document comparison engine",
+        "Discrepancy identification and review queues",
+        "Role-based validation and status tracking",
+      ],
+      contribution:
+        "Solution architecture, Python and Django development, comparison logic, REST endpoints, JavaScript interfaces, and workflow integrations.",
+      outcome:
+        "Reduced reliance on third-party comparison tooling and helped accelerate approval operations through a clearer digital workflow.",
+    },
   },
   {
     title: "HDFC Analytics & Automation",
@@ -162,6 +226,22 @@ export const projects = [
     tags: ["Python", "Django", "PostgreSQL", "Analytics", "ML"],
     accent: "amber",
     category: "Banking / Analytics",
+    caseStudy: {
+      context:
+        "Marketing, risk, and operations teams needed dependable internal tools to translate customer and campaign data into timely decisions.",
+      solution:
+        "Delivered analytics and automation applications for campaign planning, customer segmentation, risk classification, and operational workflows.",
+      capabilities: [
+        "Campaign analytics and performance reporting",
+        "Customer segmentation and risk assessment",
+        "Risk-based re-KYC classification support",
+        "Operational workflow automation",
+      ],
+      contribution:
+        "Python and Django applications, PostgreSQL data models, JavaScript interfaces, machine learning workflows, and stakeholder-led iteration.",
+      outcome:
+        "Contributed to measurable business efficiency and provided internal teams with faster, more actionable decision support.",
+    },
   },
 ];
 
