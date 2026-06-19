@@ -7,7 +7,7 @@ import {
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = getSiteUrl();
-  const lastModified = new Date("2026-06-18");
+  const lastModified = new Date("2026-06-19");
 
   return [
     {

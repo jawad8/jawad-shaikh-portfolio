@@ -1,4 +1,5 @@
 import {
+  Activity,
   Bot,
   Braces,
   Building2,
@@ -7,8 +8,10 @@ import {
   FileSearch,
   Landmark,
   Layers3,
+  LineChart,
   ScanSearch,
   Sparkles,
+  Users,
   Workflow,
 } from "lucide-react";
 
@@ -114,6 +117,62 @@ export const experiences = [
 
 export const projects = [
   {
+    slug: "ai-system-health-guardian",
+    title: "AI System Health Guardian",
+    subtitle: "Infrastructure Monitoring Platform",
+    description:
+      "Enterprise-style monitoring for infrastructure health, operational metrics, real-time alerts, and distributed environments.",
+    icon: Activity,
+    tags: ["Next.js", "React", "TypeScript", "Monitoring", "Data Visualization"],
+    accent: "cyan",
+    category: "Infrastructure / Monitoring",
+    liveDemo: "https://ai-system-health-guardian.vercel.app/",
+    caseStudy: {
+      context:
+        "Operations teams need a clear view of system health across servers, data centres, and distributed environments before issues affect availability.",
+      solution:
+        "Built an enterprise-style monitoring experience that brings infrastructure metrics, health indicators, alerts, and operational trends into a focused dashboard.",
+      capabilities: [
+        "CPU, memory, storage, and network monitoring",
+        "System health status and alert workflows",
+        "Operational metrics and trend visualization",
+        "Distributed infrastructure and mining environment views",
+      ],
+      contribution:
+        "Designed and developed the responsive Next.js dashboard, reusable monitoring components, metric visualizations, alert states, and operational user experience.",
+      outcome:
+        "A polished demonstration of how complex infrastructure signals can be organized into an accessible, decision-focused monitoring interface.",
+    },
+  },
+  {
+    slug: "peopleops-hrms",
+    title: "PeopleOps HRMS",
+    subtitle: "Modern Workforce Management",
+    description:
+      "A modern HR platform for employee operations, attendance, leave, payroll insights, analytics, and AI-assisted workforce queries.",
+    icon: Users,
+    tags: ["Next.js", "React", "TypeScript", "HR Analytics", "AI Integration"],
+    accent: "emerald",
+    category: "Enterprise / HR Tech",
+    liveDemo: "https://peopleops-hrms.vercel.app/",
+    caseStudy: {
+      context:
+        "HR teams often manage employee records, attendance, leave, payroll signals, and workforce questions across disconnected tools and manual processes.",
+      solution:
+        "Created a cohesive HRMS experience that centralizes workforce operations, management dashboards, analytical views, and AI-assisted employee queries.",
+      capabilities: [
+        "Employee information and workforce management",
+        "Attendance and leave tracking workflows",
+        "Payroll insights and HR analytics dashboards",
+        "AI-assisted workforce information queries",
+      ],
+      contribution:
+        "Designed and implemented the product interface, reusable Next.js components, responsive dashboards, analytical views, and AI-assisted interaction patterns.",
+      outcome:
+        "A professional HR technology prototype demonstrating how workforce data and routine HR workflows can be made easier to understand and manage.",
+    },
+  },
+  {
     slug: "synapse-ai-contract-risk-analyzer",
     title: "Synapse AI",
     subtitle: "Intelligent Contract Risk Analyzer",
@@ -138,6 +197,34 @@ export const projects = [
         "Full-stack architecture, Django REST APIs, React workflows, retrieval pipeline design, prompt orchestration, and secure JWT-based access.",
       outcome:
         "A reusable demonstration platform for faster, more consistent first-pass contract review while keeping the reviewer in control.",
+    },
+  },
+  {
+    slug: "stock-portfolio-app",
+    title: "Stock Portfolio App",
+    subtitle: "Investment Performance Dashboard",
+    description:
+      "A responsive investment dashboard for tracking holdings, portfolio value, gains and losses, and overall financial performance.",
+    icon: LineChart,
+    tags: ["JavaScript", "Financial Dashboard", "Responsive UI", "Data Visualization"],
+    accent: "amber",
+    category: "FinTech / Investments",
+    liveDemo: "https://jawad8.github.io/stock-portfolio-app/",
+    caseStudy: {
+      context:
+        "Individual investors need a simple way to review holdings and understand portfolio performance without working through dense financial tables.",
+      solution:
+        "Developed a responsive portfolio interface that organizes investment holdings, total value, gains and losses, and performance indicators into clear visual summaries.",
+      capabilities: [
+        "Investment and holding tracking",
+        "Portfolio value and performance summaries",
+        "Gain and loss visualization",
+        "Responsive financial dashboard experience",
+      ],
+      contribution:
+        "Developed the application structure, responsive interface, portfolio calculations, reusable UI elements, and financial data presentation.",
+      outcome:
+        "A concise investment-tracking experience that makes essential portfolio information easy to scan across desktop and mobile devices.",
     },
   },
   {

@@ -334,6 +334,10 @@ button:focus-visible {
   display: none;
 }
 
+.mobile-portrait {
+  position: relative;
+}
+
 .availability-pill {
   display: inline-flex;
   align-items: center;
@@ -967,7 +971,7 @@ button:focus-visible {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
 
@@ -975,7 +979,6 @@ button:focus-visible {
   position: relative;
   display: flex;
   min-height: 395px;
-  grid-column: span 2;
   flex-direction: column;
   padding: 27px;
   border-radius: 20px;
@@ -993,11 +996,6 @@ button:focus-visible {
   content: "";
   opacity: 0.28;
   pointer-events: none;
-}
-
-.project-featured {
-  min-height: 410px;
-  grid-column: span 3;
 }
 
 .project-violet {
@@ -1110,7 +1108,7 @@ button:focus-visible {
 .project-card-actions {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-wrap: wrap;
   gap: 14px;
   margin-top: auto;
   padding-top: 17px;
@@ -2522,15 +2520,6 @@ a.contact-detail:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .project-card,
-  .project-featured {
-    grid-column: span 1;
-  }
-
-  .project-card:last-child {
-    grid-column: 1 / -1;
-  }
-
   .achievement-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2824,11 +2813,8 @@ a.contact-detail:hover {
     grid-template-columns: 1fr;
   }
 
-  .project-card,
-  .project-featured,
-  .project-card:last-child {
+  .project-card {
     min-height: 400px;
-    grid-column: auto;
   }
 
   .case-study-overlay {

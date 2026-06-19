@@ -573,9 +573,7 @@ function Projects() {
               return (
                 <motion.article
                   key={project.title}
-                  className={`glass-card project-card project-${project.accent} ${
-                    index < 2 ? "project-featured" : ""
-                  }`}
+                  className={`glass-card project-card project-${project.accent}`}
                   variants={reveal}
                   whileHover={{ y: -6 }}
                   transition={{ duration: 0.22 }}
@@ -598,10 +596,24 @@ function Projects() {
                     ))}
                   </div>
                   <div className="project-card-actions">
-                    <Link href={`/projects/${project.slug}`}>
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      aria-label={`Read the ${project.title} case study`}
+                    >
                       Full case study
                       <ArrowRight size={15} aria-hidden="true" />
                     </Link>
+                    {"liveDemo" in project && project.liveDemo ? (
+                      <a
+                        href={project.liveDemo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Open the ${project.title} live demo in a new tab`}
+                      >
+                        Live Demo
+                        <ExternalLink size={14} aria-hidden="true" />
+                      </a>
+                    ) : null}
                     <button
                       className="project-detail-button"
                       type="button"

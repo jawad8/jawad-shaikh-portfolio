@@ -42,7 +42,10 @@ export const rolePagePaths = [
 ] as const;
 
 export const projectPagePaths = [
+  "/projects/ai-system-health-guardian",
+  "/projects/peopleops-hrms",
   "/projects/synapse-ai-contract-risk-analyzer",
+  "/projects/stock-portfolio-app",
   "/projects/enterprise-knowledge-assistant-rag",
   "/projects/insta-bank-guarantee-automation",
   "/projects/suresanction-loan-automation",

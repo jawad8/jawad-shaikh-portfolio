@@ -350,6 +350,30 @@ export const projectSeo: Record<
     roleSummary: string;
   }
 > = {
+  "ai-system-health-guardian": {
+    metaTitle: "AI System Health Guardian | Monitoring Platform | Jawad Shaikh",
+    metaDescription:
+      "Enterprise-style infrastructure monitoring platform by Jawad Shaikh for system health, CPU, memory, storage, networks, alerts, and operational metrics.",
+    headline: "Enterprise Infrastructure Monitoring and System Health Platform",
+    overview:
+      "AI System Health Guardian is an enterprise-style monitoring interface for understanding infrastructure health across servers, data centres, distributed systems, and mining environments. It presents operational signals in a clear, responsive dashboard.",
+    businessImpact:
+      "The platform demonstrates how centralized health indicators, alerts, and performance trends can help operations teams identify emerging risks and focus attention on systems that need intervention.",
+    roleSummary:
+      "I designed and developed the responsive Next.js experience, reusable monitoring components, metric visualizations, health states, alert workflows, and operational dashboard structure.",
+  },
+  "peopleops-hrms": {
+    metaTitle: "PeopleOps HRMS | Workforce Management Platform | Jawad Shaikh",
+    metaDescription:
+      "PeopleOps HRMS is a modern workforce platform for employee management, attendance, leave, payroll insights, HR analytics, and AI-assisted queries.",
+    headline: "Modern HRMS and Workforce Analytics Platform",
+    overview:
+      "PeopleOps HRMS brings employee operations, attendance, leave, payroll insights, workforce analytics, and AI-assisted queries into a cohesive management experience designed for modern HR teams.",
+    businessImpact:
+      "The prototype shows how centralized workflows and accessible workforce insights can reduce administrative friction and help HR teams make better-informed operational decisions.",
+    roleSummary:
+      "I designed and implemented the product interface, reusable Next.js components, responsive workforce dashboards, analytical views, and AI-assisted interaction patterns.",
+  },
   "synapse-ai-contract-risk-analyzer": {
     metaTitle: "Synapse AI Contract Risk Analyzer | Jawad Shaikh",
     metaDescription:
@@ -361,6 +385,18 @@ export const projectSeo: Record<
       "The platform demonstrates how legal and commercial teams can reduce repetitive first-pass review, find relevant clauses faster, and retain source traceability when using Generative AI.",
     roleSummary:
       "I designed and developed the full-stack architecture, including Django REST APIs, React workflows, document ingestion, retrieval design, prompt orchestration, JWT authentication, and local LLM integration.",
+  },
+  "stock-portfolio-app": {
+    metaTitle: "Stock Portfolio Management App | Jawad Shaikh",
+    metaDescription:
+      "Responsive stock portfolio application by Jawad Shaikh for tracking investments, holdings, portfolio value, gains, losses, and financial performance.",
+    headline: "Responsive Stock Portfolio Management Dashboard",
+    overview:
+      "The Stock Portfolio App is a responsive financial dashboard that helps users review investments, individual holdings, overall portfolio value, gains and losses, and performance at a glance.",
+    businessImpact:
+      "The application demonstrates how focused information design and clear financial visualization can make investment performance easier to understand across desktop and mobile devices.",
+    roleSummary:
+      "I developed the application structure, responsive user interface, portfolio calculations, reusable components, and financial data presentation.",
   },
   "enterprise-knowledge-assistant-rag": {
     metaTitle: "Enterprise Knowledge Assistant RAG Project | Jawad Shaikh",
